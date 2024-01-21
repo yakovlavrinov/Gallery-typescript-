@@ -1,9 +1,9 @@
-import { WolfGallery } from "./components";
+import { Gallery } from "./components";
 
 function App() {
   return (
     <div className="App">
-      <WolfGallery
+      <Gallery
         photos={[
           {
             id: 1,

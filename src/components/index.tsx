@@ -8,11 +8,11 @@ import { TransitionPhoto } from "./MainPhoto/index";
 
 import style from "./index.module.scss";
 
-interface WolfGalleryProps {
+interface GalleryProps {
   photos: Photo[];
 }
 
-export const WolfGallery: React.FC<WolfGalleryProps> = ({ photos }) => {
+export const Gallery: React.FC<GalleryProps> = ({ photos }) => {
   if (!photos.length) {
     return null;
   }
@@ -22,15 +22,15 @@ export const WolfGallery: React.FC<WolfGalleryProps> = ({ photos }) => {
   const nextPhoto = photos[indexActivePhoto + 1];
 
   return (
-    <div className={style.wolfGallery}>
-      <div className={style.wolfGalleryContainer}>
+    <div className={style.Gallery}>
+      <div className={style.GalleryContainer}>
         <TransitionPhoto
-          className={style.wolfGalleryTransitionPhoto}
+          className={style.GalleryTransitionPhoto}
           photos={photos}
           indexActivePhoto={indexActivePhoto}
         />
         <Navigation
-          className={style.wolfGalleryNavigation}
+          className={style.GalleryNavigation}
           disabledPrev={!prevPhoto}
           disabledNext={!nextPhoto}
           onPrevClick={() => {
@@ -42,7 +42,7 @@ export const WolfGallery: React.FC<WolfGalleryProps> = ({ photos }) => {
         />
       </div>
       <PreviewGallery
-        className={style.wolfGalleryPreviewList}
+        className={style.GalleryPreviewList}
         indexActivePhoto={indexActivePhoto}
         photos={photos}
         setNewPhoto={setIndexActivePhoto}
